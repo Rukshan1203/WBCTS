@@ -1,89 +1,179 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
-
-	<style type="text/css">
-
-	::selection { background-color: #E13300; color: white; }
-	::-moz-selection { background-color: #E13300; color: white; }
-
-	body {
-		background-color: #fff;
-		margin: 40px;
-		font: 13px/20px normal Helvetica, Arial, sans-serif;
-		color: #4F5155;
-	}
-
-	a {
-		color: #003399;
-		background-color: transparent;
-		font-weight: normal;
-	}
-
-	h1 {
-		color: #444;
-		background-color: transparent;
-		border-bottom: 1px solid #D0D0D0;
-		font-size: 19px;
-		font-weight: normal;
-		margin: 0 0 14px 0;
-		padding: 14px 15px 10px 15px;
-	}
-
-	code {
-		font-family: Consolas, Monaco, Courier New, Courier, monospace;
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
-
-	#body {
-		margin: 0 15px 0 15px;
-	}
-
-	p.footer {
-		text-align: right;
-		font-size: 11px;
-		border-top: 1px solid #D0D0D0;
-		line-height: 32px;
-		padding: 0 10px 0 10px;
-		margin: 20px 0 0 0;
-	}
-
-	#container {
-		margin: 10px;
-		border: 1px solid #D0D0D0;
-		box-shadow: 0 0 8px #D0D0D0;
-	}
-	</style>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="icon" href="" type="image/gif" sizes="16x16">
+	<title>System Name</title>
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<!-- Bootstrap 3.3.7 -->
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/font-awesome/css/font-awesome.min.css">
+	<!-- Ionicons -->
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/Ionicons/css/ionicons.min.css">
+	<!-- Theme style -->
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.css">
+	<!-- DataTables -->
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+	<!-- bootstrap datepicker -->
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+	<!-- AdminLTE Skins -->
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/skins/_all-skins.min.css">
+	<!-- Google Font -->
+	<link rel="stylesheet"
+		  href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	<!-- jQuery 3 -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 </head>
-<body>
+<body class="fixed sidebar-mini sidebar-mini-expand-feature skin-blue-light" style="height: auto; min-height: 100%;">
+<!-- Site wrapper -->
+<div class="wrapper">
 
-<div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
+	<!-- ================== Start Header ============================= -->
+	<header class="main-header fixed">
+		<!-- Logo -->
+		<a href=""
+		   class="logo">
+			<!-- logo for regular state and mobile devices -->
+			<span class="logo-lg"><b>WBCTS</b></span>
+		</a>
+		<!-- Header Navbar: style can be found in header.less -->
+		<nav class="navbar navbar-static-top">
+			<!-- Sidebar toggle button-->
+			<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
 
-	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
+			<div class="navbar-custom-menu">
+				<ul class="nav navbar-nav">
+					<li>
+						<p class="navbar-text" style="color: #fff;" href="#" id="datetime"></p>
+					</li>
+					<li>
+						<a href=""> <i class="fa fa-user-circle"
+									   style="margin-right: 3px; vertical-align: bottom; font-size: 18px;"></i> </a>
+					</li>
+					<li>
+						<a href="#" data-toggle="modal" data-target="#logout_modal"><i class="fa fa-sign-out"></i>
+							Logout</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- ================== End Header ============================= -->
 
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
+	<!-- ================== Start Side Bar ============================ -->
+	<aside class="main-sidebar">
+		<!-- sidebar: style can be found in sidebar.less -->
+		<section class="sidebar">
+			<ul class="sidebar-menu">
+				<li>
+					<a href="">
+						<i class="fa fa-tachometer"></i> &nbsp;&nbsp;<span>Dashboard</span>
+						<span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+					</a>
+				</li>
+			</ul>
+		</section>
+		<!-- /.sidebar -->
+	</aside>
+	<!-- ================== End Side Bar =========================== -->
 
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/Welcome.php</code>
-
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+	<!-- ================== Start content =========================== -->
+	<div class="content-wrapper">
+		<!-- Main content -->
+		<section class="content">
+		</section>
 	</div>
+	<!-- ================== End content =========================== -->
 
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+	<!-- ================== Start Footer ============================ -->
+	<footer class="main-footer">
+		<strong>Web Based Commuter Ticketing System &copy; 2020</strong> All rights reserved.
+	</footer>
+	<!-- ================== End Footer ============================ -->
+
+	<!-- logout modal-->
+	<div class="modal fade" tabindex="-1" role="dialog" id="logout_modal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Logout</h4>
+				</div>
+				<div class="modal-body">
+					<span>Are you sure want to logout ?</span>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal"> No</button>
+					<a href="" class="btn btn-primary"> Yes </a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
+<!-- Bootstrap 3.3.7 -->
+<script src="<?php echo base_url(); ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- ChartJS -->
+<script src="<?php echo base_url(); ?>assets/bower_components/chart.js/Chart.js"></script>
+<!--Jquery Validator-->
+<script src="<?php echo base_url(); ?>assets/js/jquery-validator.js"></script>
+<!-- SlimScroll -->
+<script src="<?php echo base_url(); ?>assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="<?php echo base_url(); ?>assets/bower_components/fastclick/lib/fastclick.js"></script>
+<!-- Bootstrap Notify -->
+<script src="<?php echo base_url(); ?>assets/js/bootstrap-notify.min.js"></script>
+<!-- DataTables -->
+<script src="<?php echo base_url(); ?>assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- bootstrap datepicker -->
+<script src="<?php echo base_url(); ?>assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<!-- AdminLTE App -->
+<script src="<?php echo base_url(); ?>assets/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="<?php echo base_url(); ?>assets/dist/js/demo.js"></script>
+<script>
+	$(document).ready(function () {
+		$('.sidebar-menu').tree();
+	})
+
+	$(function () {
+		$('#datepicker').datepicker({
+			autoclose: true,
+			format: 'yyyy-mm-dd',
+			changeMonth: true,
+			changeYear: true,
+			todayHighlight: true,
+			orientation: 'bottom left',
+		})
+	});
+</script>
+<script>
+	$(function () {
+		$('.data_tables').DataTable({
+			'paging': true,
+			'lengthChange': true,
+			'searching': true,
+			'ordering': true,
+			'info': true,
+			'autoWidth': false,
+			"pageLength": 10,
+		})
+	})
+</script>
+<script>
+	// jquery validate plugin
+	$.validate();
+</script>
 </body>
 </html>
+
