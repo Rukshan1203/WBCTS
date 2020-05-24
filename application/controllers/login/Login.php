@@ -13,7 +13,7 @@ class Login extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('login/login');
+		$this->load->view('Login/login');
 	}
 
 	public function signup(){
@@ -25,10 +25,11 @@ class Login extends CI_Controller
 		$query_result = $this->LoginModel->select_user($data);
 
 		if($query_result == true){
+			$this->session->set_userdata('name','Rukshan Silva');
 			redirect('dashboard');
 		}
 		else {
-			redirect('login/login');
+			redirect('Login/login');
 		}
 	}
 }

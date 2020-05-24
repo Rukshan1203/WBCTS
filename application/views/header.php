@@ -25,6 +25,8 @@
 		  href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 	<!-- jQuery 3 -->
 	<script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
+	<!-- Base URL -->
+	<script> var base_url = '<?php echo site_url() ?>';</script>
 </head>
 <body class="fixed sidebar-mini sidebar-mini-expand-feature skin-blue-light" style="height: auto; min-height: 100%;">
 <!-- Site wrapper -->
@@ -47,15 +49,14 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</a>
-
 			<div class="navbar-custom-menu">
 				<ul class="nav navbar-nav">
 					<li>
-						<p class="navbar-text" style="color: #fff;" href="#" id="datetime"></p>
+						<p class="navbar-text" style="color: #fff;" href="#" id="datetime">Date Time</p>
 					</li>
 					<li>
 						<a href=""> <i class="fa fa-user-circle"
-									   style="margin-right: 3px; vertical-align: bottom; font-size: 18px;"></i> </a>
+									   style="margin-right: 3px; vertical-align: bottom; font-size: 18px;"></i><?php echo $this->session->userdata('name'); ?> </a>
 					</li>
 					<li>
 						<a href="#" data-toggle="modal" data-target="#logout_modal"><i class="fa fa-sign-out"></i>
@@ -73,13 +74,38 @@
 		<section class="sidebar">
 			<ul class="sidebar-menu">
 				<li>
-					<a href="">
+					<a href="<?php echo base_url(); ?>dashboard">
 						<i class="fa fa-tachometer"></i> &nbsp;&nbsp;<span>Dashboard</span>
 						<span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                         </span>
 					</a>
 				</li>
+				<li>
+					<a href="<?php echo base_url(); ?>users/users">
+						<i class="fa fa-users"></i> &nbsp;&nbsp;<span>Users</span>
+						<span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo base_url(); ?>commuter/commuter">
+						<i class="fa fa-user-circle" ></i> <span>Commuter</span>
+						<span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo base_url(); ?>route/route">
+						<i class="fa fa-road"></i> <span>Route</span>
+						<span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+					</a>
+				</li>
+
 			</ul>
 		</section>
 		<!-- /.sidebar -->

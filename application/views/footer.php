@@ -19,7 +19,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal"> No</button>
-				<a href="" class="btn btn-primary"> Yes </a>
+				<a href="<?php  ?>" class="btn btn-primary"> Yes </a>
 			</div>
 		</div>
 	</div>
